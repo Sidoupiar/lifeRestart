@@ -1151,5 +1151,38 @@
         "name": "魔法棒",
         "description": "不知道有什么用……",
         "grade": 2
+    },
+    "9997": {
+        "id": 9997,
+        "name": "哦豁豁",
+        "description": "初始可用属性点+20，全属性+3",
+        "grade": 3,
+        "status": 20,
+        "effect": {
+            "SPR": 3,
+            "MNY": 3,
+            "CHR": 3,
+            "STR": 3,
+            "INT": 3
+        }
+    },
+    "9998": {
+        "id": 9998,
+        "name": "精致的小盒子",
+        "description": "家里收藏着一个精致的小盒子，但是打不开",
+        "grade": 3,
+        "effect": {
+            "STR": 15,
+            "INT": 10
+        }
+    },
+    "9999": {
+        "id": 9999,
+        "name": "奇怪的体质",
+        "description": "总感觉身体有哪里不对",
+        "grade": 3,
+        "effect": {
+            "STR": 25
+        }
     }
 }

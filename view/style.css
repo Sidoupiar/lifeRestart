@@ -95,7 +95,7 @@ html {
     border: none;
     border-radius: 0.2rem;
     background-color:lightsteelblue;
-    font-size: 1.4rem;
+    font-size: 0.8rem;
     color: white;
     cursor: pointer;
     z-index:2;
@@ -132,9 +132,9 @@ html {
     position: fixed;
     list-style-type: none;
     left: 50%;
-    top: 5rem;
-    bottom: 8.5rem;
-    width: 30rem;
+    top: 3.5rem;
+    bottom: 14rem;
+    width: 36rem;
     max-width: calc(100% - 2rem);
     margin: auto;
     padding: 0;
@@ -146,9 +146,9 @@ html {
     position: relative;
     border: 1px #ccc solid;
     display: inline-block;
-    width: 95%;
+    width: 97.5%;
     margin: 0.1rem auto;
-    font-size: 1.4rem;
+    font-size: 0.8rem;
     text-align: center;
     border-radius: 0.2rem;
     cursor: pointer;
@@ -164,7 +164,7 @@ html {
     padding: 1px;
     height: 100%;
     width: 1.5rem;
-    content: "　";
+    content: " ";
 }
 
 .grade1,
@@ -195,8 +195,8 @@ html {
 }
 
 .propinitial {
-    top: 6rem;
-    bottom: 14rem;
+    top: 4rem;
+    bottom: 11rem;
 }
 
 .propinitial > li {
@@ -204,19 +204,19 @@ html {
     display: inline-block;
     width: 95%;
     margin: 0.1rem auto;
-    font-size: 1.4rem;
+    font-size: 0.8rem;
     text-align: center;
     border-radius: 0.2rem;
     padding: 0.2rem;
 }
 
 .propinitial > li > input {
-    height: 2.2rem;
-    width: 2.2rem;
+    height: 1.4rem;
+    width: 1.4rem;
     margin: 0 0.5rem;
     padding: 0;
     text-align: center;
-    font-size: 2rem;
+    font-size: 1.2rem;
     border: 0.1rem #ccc solid;
 }
 
@@ -237,8 +237,8 @@ html {
     position: relative;
     width: calc(100% - 7rem);
     margin: 0.5rem 0;
-    padding: 0.5rem 1rem 0.5rem 6rem;
-    font-size: 1.4rem;
+    padding: 0.2rem 1rem 0.2rem 6rem;
+    font-size: 0.8rem;
     background-color: white;
     box-shadow: lightblue 0 0 0.4rem;
     user-select: none;

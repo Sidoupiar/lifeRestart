@@ -78,9 +78,9 @@ class App{
         const talentPage = $(`
         <div id="main">
             <div class="head" style="font-size: 1.6rem">天赋抽卡</div>
-            <button id="random" class="mainbtn" style="top: 50%;">10连抽！</button>
+            <button id="random" class="mainbtn" style="top:75%;">10连抽！</button>
             <ul id="talents" class="selectlist"></ul>
-            <button id="next" class="mainbtn" style="top:auto; bottom:0.1em">请选择3个</button>
+            <button id="next" class="mainbtn" style="top:auto; bottom:0.1em">最多可以选择10个天赋</button>
         </div>
         `);
 
@@ -91,8 +91,9 @@ class App{
         talentPage
             .find('#random')
             .click(()=>{
-                talentPage.find('#random').hide();
+                //talentPage.find('#random').hide();
                 const ul = talentPage.find('#talents');
+				ul.empty();
                 this.#life.talentRandom()
                     .forEach(talent=>{
                         const li = createTalent(talent);
@@ -102,8 +103,8 @@ class App{
                                 li.removeClass('selected')
                                 this.#talentSelected.delete(talent);
                             } else {
-                                if(this.#talentSelected.size==3) {
-                                    this.hint('只能选3个天赋');
+                                if(this.#talentSelected.size==10) {
+                                    this.hint('最多可以选择10个天赋');
                                     return;
                                 }
 
@@ -130,8 +131,8 @@ class App{
         talentPage
             .find('#next')
             .click(()=>{
-                if(this.#talentSelected.size!=3) {
-                    this.hint('请选择3个天赋');
+                if(this.#talentSelected.size>10) {
+                    this.hint('最多可以选择10个天赋');
                     return;
                 }
                 this.#totalMax = 20 + this.#life.getTalentAllocationAddition(Array.from(this.#talentSelected).map(({id})=>id));
@@ -205,10 +206,10 @@ class App{
             return {group, get, set};
         }
 
-        groups.CHR = getBtnGroups("颜值", 0, 10); // 颜值 charm CHR
-        groups.INT = getBtnGroups("智力", 0, 10); // 智力 intelligence INT
-        groups.STR = getBtnGroups("体质", 0, 10); // 体质 strength STR
-        groups.MNY = getBtnGroups("家境", 0, 10); // 家境 money MNY
+        groups.CHR = getBtnGroups("颜值", 0, 100); // 颜值 charm CHR
+        groups.INT = getBtnGroups("智力", 0, 100); // 智力 intelligence INT
+        groups.STR = getBtnGroups("体质", 0, 100); // 体质 strength STR
+        groups.MNY = getBtnGroups("家境", 0, 100); // 家境 money MNY
 
         const ul = propertyPage.find('#propertyAllocation');
 
@@ -220,9 +221,9 @@ class App{
             .find('#random')
             .click(()=>{
                 let t = this.#totalMax;
-                const arr = [10, 10, 10, 10];
+                const arr = [100, 100, 100, 100];
                 while(t>0) {
-                    const sub = Math.round(Math.random() * (Math.min(t, 10) - 1)) + 1;
+                    const sub = Math.round(Math.random() * (Math.min(t, 100) - 1)) + 1;
                     while(true) {
                         const select = Math.floor(Math.random() * 4) % 4;
                         if(arr[select] - sub <0) continue;
@@ -231,10 +232,10 @@ class App{
                         break;
                     }
                 }
-                groups.CHR.set(10 - arr[0]);
-                groups.INT.set(10 - arr[1]);
-                groups.STR.set(10 - arr[2]);
-                groups.MNY.set(10 - arr[3]);
+                groups.CHR.set(100 - arr[0]);
+                groups.INT.set(100 - arr[1]);
+                groups.STR.set(100 - arr[2]);
+                groups.MNY.set(100 - arr[3]);
             });
 
         propertyPage
@@ -304,7 +305,7 @@ class App{
         const summaryPage = $(`
         <div id="main">
             <div class="head">人生总结</div>
-            <ul id="judge" class="judge" style="bottom: calc(35% + 2.5rem)">
+            <ul id="judge" class="judge" style="bottom: 55%">
                 <li class="grade2"><span>颜值：</span>9级 美若天仙</li>
                 <li><span>智力：</span>4级 智力一般</li>
                 <li><span>体质：</span>1级 极度虚弱</li>
@@ -312,8 +313,8 @@ class App{
                 <li><span>享年：</span>3岁 早夭</li>
                 <li><span>快乐：</span>3级 不太幸福的人生</li>
             </ul>
-            <div class="head" style="top:auto; bottom:35%">天赋，你可以选一个，下辈子还能抽到</div>
-            <ul id="talents" class="selectlist" style="top:calc(65% + 0.5rem); bottom:8rem">
+            <div class="head" style="top:auto; bottom:50%">天赋，你可以选一个，下辈子还能抽到</div>
+            <ul id="talents" class="selectlist" style="top:50%; bottom:8rem">
                 <li class="grade2b">黑幕（面试一定成功）</li>
             </ul>
             <button id="again" class="mainbtn" style="top:auto; bottom:0.1em"><span class="iconfont">&#xe6a7;</span>再次重开</button>

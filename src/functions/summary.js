@@ -7,6 +7,7 @@ const data = {
         {"min":7, "judge": "优秀", "grade": 1},
         {"min":9, "judge": "罕见", "grade": 2},
         {"min":11, "judge": "逆天", "grade": 3},
+		{"min":13, "judge": "倾国", "grade": 3}
     ],
     "MNY": [
         {"judge": "地狱", "grade": 0},
@@ -16,6 +17,7 @@ const data = {
         {"min":7, "judge": "优秀", "grade": 1},
         {"min":9, "judge": "罕见", "grade": 2},
         {"min":11, "judge": "逆天", "grade": 3},
+		{"min":13, "judge": "超凡", "grade": 3}
     ],
     "SPR": [
         {"judge": "地狱", "grade": 0},
@@ -51,6 +53,7 @@ const data = {
         {"min":401, "judge": "金丹", "grade": 3},
         {"min":1001, "judge": "元婴", "grade": 3},
         {"min":2001, "judge": "仙体", "grade": 3},
+		{"min":3001, "judge": "神躯", "grade": 3}
     ],
     "AGE": [
         {"judge": "胎死腹中", "grade": 0},
@@ -75,6 +78,9 @@ const data = {
         {"min":100, "judge": "罕见", "grade": 2},
         {"min":110, "judge": "逆天", "grade": 3},
         {"min":120, "judge": "传说", "grade": 3},
+		{"min":200, "judge": "不朽", "grade": 3},
+		{"min":500, "judge": "史诗", "grade": 3},
+		{"min":1000, "judge": "神话", "grade": 3}
     ]
 }
 
